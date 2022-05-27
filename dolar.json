@@ -1,0 +1,24 @@
+[{
+    "_comment": "Dejo el JSON por si en algun momento deja de funcionar la API"
+},    
+{
+    "casa": {
+        "compra": "94,700",
+        "venta": "100,700",
+        "agencia": "349",
+        "nombre": "Dolar Oficial",
+        "variacion": "0,030",
+        "ventaCero": "TRUE",
+        "decimales": "3"
+    }
+}, {
+    "casa": {
+        "compra": "157,000",
+        "venta": "162,000",
+        "agencia": "310",
+        "nombre": "Dolar Blue",
+        "variacion": "1,250",
+        "ventaCero": "TRUE",
+        "decimales": "3"
+    }
+}]

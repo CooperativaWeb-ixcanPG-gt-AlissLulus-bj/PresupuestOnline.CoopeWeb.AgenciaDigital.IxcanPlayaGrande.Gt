@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+    text-decoration: none !important;
+    list-style: none !important;
+    color: inherit;
+    font-family: 'Poppins', sans-serif;    
+}
+
+/* Main */
+.main {
+    display: flex;
+    justify-content: space-around;
+}
+
+.logo__icono {
+    width: 40px;
+    padding-right: 10px;
+}
+
+.row img {
+    filter: sepia(.2);
+}
+
+/* Formulario */
+.sec__formularios {
+    width: 25%;
+    margin: 2em;
+    padding: 2em;
+    background-color: rgb(236, 236, 236);
+}
+.card-body {
+    margin-bottom: 1em;
+}
+
+.datosProfesional__logo {
+    background-color: #497ecf;
+    color: white;
+    padding: 0.5em;
+    text-align: center;
+    border-radius: 8px;
+}
+
+#logo {
+    display: none;
+}
+
+#logo__img {
+    width: 150px;
+    height: 150px;
+}
+
+.profesional,
+.datos,
+#formPago {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.profesional label,
+.datos label,
+.cliente__presupuesto label {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 1em;
+    font-weight: bold;
+}
+
+#formProfesional,
+#formDatos,
+#formCliente,
+#formTrabajo,
+#formEtapa {
+    display: flex;
+    flex-direction: column;
+}
+
+#descripcion {
+    height: 100px;
+    resize: none;
+}
+
+.honorarios div{
+    display: flex;
+    justify-content: center;
+}
+
+.presupuesto__profesional {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn i {
+    padding-left: 1em;
+}
+
+.contenedor__submit {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn__label {
+    cursor: pointer;
+    background-color: #25d366;
+    text-align: center;
+    color: white;
+    border-radius: 8px;
+    width: 18%;
+}
+
+input[type=submit]  {
+    margin: 1em 0;
+    width: 80%;
+    background-color: #25d366;
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+
+#btn2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.05em;
+    width: 100%;
+    background-color: white;
+    color: #0d6efd;
+    border: 2px solid #0d6efd;
+    border-radius: 8px;
+    font-size: 1.2em;
+}
+
+#btn2:hover {
+    background-color: #0d6efd;
+    color: white;
+}
+
+#btn2 i {
+    padding-right: .7em;
+    justify-content: space-between;
+}
+
+.cont__api {
+    margin-top: 1em;
+    background-color: white;
+    padding: 0.5em;
+    border-radius: 8px;
+}
+
+.cont__api h3 {
+    font-size: 1.4em;
+    text-align: center;
+    border-bottom: 1px solid ;
+}
+
+.cont__api h4 {
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+/* Show reset */
+#btn-reset,
+#parrafo-reset {
+    display: none;
+    margin-top: 0.5em;
+    color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+/* Presupuesto */
+.sec__presupuesto {
+    margin: 2em;
+    padding: 2em;
+    border: solid 1px black;
+    border-radius: 0 16px 0 0;
+    min-height: 50em;
+}
+
+.sec__presupuesto input {
+    border: none;
+    padding-left: 1em;
+    width: 250px;
+}
+
+#trabajoRealizar {
+    width: 400px;
+}
+
+.header__presupuesto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1em 0;
+    padding-bottom: 2em;
+    border-bottom: solid 1px grey;
+}
+
+.cliente__presupuesto,
+#etapas__presupuesto {
+    margin: 1em 0;
+    padding-bottom: 1em;
+    border-bottom: solid 1px grey;
+}
+
+.pago__presupuesto {
+    margin: 1em 0;
+}
+
+.cliente__presupuesto section {
+    padding: 0 1em;
+    display: flex;
+}
+
+.honorarios__presupuesto--cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1em;
+}
+
+.totalHonorariosEtapas--div {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    border-left: 1px solid black;
+    padding-left: 1em;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+#totalHonorariosEtapas {
+    width: 150px;
+    font-weight: 800;
+}
+
+/* Boton flotante de descarga */
+.float {
+	position: fixed;
+    padding: .2em .5em;
+	bottom: 40px;
+	right: 40px;
+	background-color: #25d366;
+	color: #FFF;
+	border-radius: 50px;
+    border: 1px solid gray;
+	text-align: center;
+    font-size: 1.5em;
+	box-shadow: 2px 2px 4px rgb(185, 185, 185);
+    z-index: 100;
+    transition: transform .2s;
+}
+
+.float i {
+    padding: 0 .5em;
+}
+
+.float:hover {
+    transform: scale(1.1);
+}
+
+/* .my-float{
+	margin-top: 16px;
+} */
+
+/* FOOTER */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 1.5em 6em;
+}
+
+.footer__contacto ul {
+    padding: 0;
+}
+
+.footer__redes ul {
+    padding: 0;
+}
+
+
+.footer--h3 {
+    color: #0d6efd;
+    padding: .5em 0;
+    text-transform: uppercase;
+    border-bottom: 1px solid #0d6efd;
+}
+
+.footer--li a {
+    color: white;
+}
+
+.footer--li i {
+    font-size: 1.3em;
+    padding: .4em .8em 0 0;
+}
+
+.footer--li a:hover {
+    color: #0d6efd;
+}

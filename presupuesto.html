@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crea tu presupuesto</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/logo__presupuesto.png" type="image/x-icon">
+    <!-- Libreria PDF -->
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"><img class="logo__icono" src="img/logo__presupuesto.png"
+                        alt=""> CoopeWeb Presupuesto Online</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+                        <li class="nav-item">
+                            <a class="btn btn-primary" href="presupuesto.html" role="button">Crear</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="sec__formularios">
+            <p>
+                <button class="btn btn-primary w-100" id="btn-profesional" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    Datos del profesional<i class="fas fa-chevron-down"></i>
+                </button>
+            </p>
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    <article class="datosProfesional">
+
+                        <div class="datosProfesional__logo">
+                            <label for="logo"><i class="fas fa-upload"></i>Subir logo</label>
+                            <input type="file" name="logo" id="logo" accept="image/*" onchange="mostrar()" />
+                        </div>
+
+                        <div class="datosProfesional__info">
+                            <form id="formProfesional">
+                                <label for="nombreProfesional">Nombre completo:</label>
+                                <input type="text" name="nombreProfesional" id="nombreProfesional" required>
+                                <label for="profesionProfesional">Profesión:</label>
+                                <input type="text" name="profesionProfesional" id="profesionProfesional">
+                                <label for="emailProfesional">Email:</label>
+                                <input type="email" name="emailProfesional" id="emailProfesional">
+                                <label for="ceuluarProfesional">Celular:</label>
+                                <input type="number" name="ceuluarProfesional" id="celularProfesional">
+
+                                <div class="contenedor__submit">
+                                    <input id="btn-submitProfesional1" type="submit" value="Confirmar">
+                                    <label class="btn__label" for="btn-submitProfesional1"><i
+                                            class="fas fa-arrow-right"></i></label>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="datosPresupuesto_general">
+                            <form id="formDatos">
+                                <label for="fecha">Fecha:</label>
+                                <input type="date" name="fecha" id="fecha">
+                                <label for="validez">Días de validez:</label>
+                                <input type="number" name="validez" id="validez">
+                                <label for="numeroContrato">Número de contrato:</label>
+                                <input type="number" name="numeroContrato" id="numeroContrato">
+
+                                <div class="contenedor__submit">
+                                    <input id="btn-submitProfesional2" type="submit" value="Confirmar">
+                                    <label class="btn__label" for="btn-submitProfesional2"><i
+                                            class="fas fa-arrow-right"></i></label>
+                                </div>
+                            </form>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <p>
+                <button class="btn btn-primary w-100" id="btn-cliente" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+                    Datos del cliente<i class="fas fa-chevron-down"></i>
+                </button>
+            </p>
+            <div class="collapse" id="collapseExample2">
+                <div class="card card-body">
+                    <article class="datosCliente">
+                        <form id="formCliente">
+                            <label for="nombreCliente">Nombre completo:</label>
+                            <input type="text" name="nombreCliente" id="nombreCliente">
+                            <label for="cuilCliente">N° Identificacion:</label>
+                            <input type="number" name="cuilCliente" id="cuilCliente">
+                            <label for="emailCliente">Email:</label>
+                            <input type="email" name="emailCliente" id="emailCliente">
+                            <label for="celularCliente">Celular:</label>
+                            <input type="number" name="celularCliente" id="celularCliente">
+
+                            <div class="contenedor__submit">
+                                <input id="btn-submitCliente" type="submit" value="Confirmar">
+                                <label class="btn__label" for="btn-submitCliente"><i
+                                        class="fas fa-arrow-right"></i></label>
+                            </div>
+                        </form>
+                    </article>
+                </div>
+            </div>
+
+            <p>
+                <button class="btn btn-primary w-100" id="btn-etapas" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">
+                    Etapas<i class="fas fa-chevron-down"></i>
+                </button>
+            </p>
+            <div class="collapse" id="collapseExample3">
+                <div class="card card-body">
+                    <article class="datosProyecto">
+                        <div class="datosTrabajo">
+                            <form id="formTrabajo">
+                                <label for="nombreTrabajo">Nombre del trabajo:</label>
+                                <input type="text" name="nombreTrabajo" id="nombreTrabajo" required>
+
+                                <div class="contenedor__submit">
+                                    <input id="btn-submitNombreEtapa" type="submit" value="Confirmar">
+                                    <label class="btn__label" for="btn-submitNombreEtapa"><i
+                                            class="fas fa-arrow-right"></i></label>
+                                </div>
+                            </form>
+                        </div>
+                        <div>
+                            <h4>Etapas</h4>
+                            <form id="formEtapa">
+                                <label for="nombreEtapa">Nombre de etapa:</label>
+                                <input type="text" name="nombreEtapa" id="nombreEtapa" required>
+                                <label for="descripcion">Descripción:</label>
+                                <textarea id="descripcion" placeholder="Ingresa la descripción de la etapa"
+                                    required></textarea>
+                                <label for="etapaHoras">Cantidad de horas:</label>
+                                <input type="number" name="etapaHoras" id="etapaHoras" required>
+
+                                <label for="precioHora">Precio por hora:</label>
+                                <input type="number" name="precioHora" id="precioHora" required>
+
+                                <div class="contenedor__submit">
+                                    <input type="submit" id="btn-submitEtapa" value="Confirmar">
+                                    <label class="btn__label" for="btn-submitEtapa"><i
+                                            class="fas fa-arrow-right"></i></label>
+                                </div>
+
+                                <input type="reset" id="btn-reset" value="Nueva Etapa">
+                            </form>
+                            <p id="parrafo-reset">*para agregar una nueva etapa borre los campos con el boton resetear.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- PROXIMAMENTE -->
+
+            <!-- <p>
+                <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4">
+                    Formas de Pago<i class="fas fa-chevron-down"></i>
+                </button>
+            </p>
+            <div class="collapse" id="collapseExample4">
+                <div class="card card-body">
+                    <article class="formasDePago">
+                        <form action="" id="formPago">
+
+                            <label for="efectivo"><input type="checkbox" name="efectivo" id="efectivo"> Efectivo</label>
+
+                            <label for="tarjeta"><input type="checkbox" name="tarjeta" id="tarjeta"> Tarjeta</label>
+
+                            <label for="transferencia"><input type="checkbox" name="transferencia" id="transferencia">
+                                Transferencia bancaria</label>
+                        </form>
+                    </article>
+                </div>
+            </div> -->
+
+        </section>
+
+        <section class="sec__presupuesto" id="presupuesto__pdf">
+            <article class="header__presupuesto">
+                <div class="logo">
+                    <img id="logo__img" />
+                </div>
+
+                <div class="profesional">
+                    <label for="nombreProfesionalObtenido">Nombre:<input type="text" name="nombreProfesionalObtenido"
+                            id="nombreProfesionalObtenido" readonly></label>
+
+                    <label for="profesionProfesionalObtenido">Profesión:<input type="text"
+                            name="profesionProfesionalObtenido" id="profesionProfesionalObtenido" readonly></label>
+
+                    <label for="emailProfesionalObtenido">Email:<input type="email" name="emailProfesionalObtenido"
+                            id="emailProfesionalObtenido" readonly></label>
+
+                    <label for="celularProfesionalObtenido">Celular:<input type="number"
+                            name="celularProfesionalObtenido" id="celularProfesionalObtenido" readonly></label>
+                </div>
+
+                <div class="datos">
+                    <label for="fechaObtenido">Fecha:<input type="text" name="fechaObtenido" id="fechaObtenido"
+                            readonly></label>
+
+                    <label for="validezObtenido">Días de validez:<input type="number" name="validezObtenido"
+                            id="validezObtenido" readonly></label>
+
+                    <label for="contratoObtenido">N° de contrato:<input type="number" name="contratoObtenido"
+                            id="contratoObtenido" readonly></label>
+                </div>
+            </article>
+
+            <article class="cliente__presupuesto">
+                <h4>Datos del cliente</h4>
+                <section>
+                    <div>
+                        <label for="nombreClienteObtenido">Nombre:<input type="text" name="nombreClienteObtenido"
+                                id="nombreClienteObtenido" readonly></label>
+
+                        <label for="cuilClienteObtenido">CUIL:<input type="number" name="cuilClienteObtenido"
+                                id="cuilClienteObtenido" readonly></label>
+                    </div>
+
+                    <div>
+                        <label for="emailClienteObtenido">Email:<input type="email" name="emailClienteObtenido"
+                                id="emailClienteObtenido" readonly></label>
+
+                        <label for="celularClienteObtenido">Celular:<input type="number" name="celularClienteObtenido"
+                                id="celularClienteObtenido" readonly></label>
+                    </div>
+                </section>
+
+            </article>
+
+            <article id="etapas__presupuesto">
+                <h4>Trabajo a realizar: <input type="text" name="trabajoRealizar" id="trabajoRealizar" readonly></h4>
+                <h5>Etapas</h5>
+            </article>
+
+            <article class="honorarios__presupuesto">
+                <h4>Total Honorarios</h4>
+                <div class="honorarios__presupuesto--cont">
+                    <div class="honorarios__presupuesto--list">
+                    </div>
+                    <div class="totalHonorariosEtapas--div">
+                        <label for="totalHonorariosEtapas">Q </label>
+                        <input type="number" name="totalHonorariosEtapas" id="totalHonorariosEtapas" readonly>
+                    </div>
+
+                </div>
+
+            </article>
+
+            <article class="pago__presupuesto">
+                <h4>Formas de pago</h4>
+                <p>*Se cobrará el 50% antes de comenzar el trabajo y el otro 50% al entregarlo.</p>
+            </article>
+
+        </section>
+
+        <button class="float" id="btn__pdf"><i class="fas fa-file-download"></i>Decargar PDF</button>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__contacto">
+            <h3 class="footer--h3">Contacto</h3>
+            <ul>
+                <li class="footer--li"><a href="https://cooperativaweb-ixcanpg-gt-alisslulus-bj.github.io/CoopeWeb.ixcan.gt.coope/"
+                        target="_blank"><i class="fas fa-copyright"></i>Copyright 2022. Agencia Digital CoopeWeb</a></li>
+                <li class="footer--li"><a href="https://cooperativaweb-ixcanpg-gt-alisslulus-bj.github.io/agenciadigitalcoopeweb.coop/"
+                        target="_blank"><i class="fas fa-user"></i>Sitio Web</a></li>
+                <li class="footer--li"><a href="mailto:cooperativawebs@gmail.com"><i class="fas fa-envelope"
+                            target="_blank"></i>Envia@gmail.com</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer__redes">
+            <h3 class="footer--h3">Redes</h3>
+            <ul>
+                <li class="footer--li"><a href="https://www.facebook.com/Agencia-Web-Hosting-Marketing-Digital-102996808707715/" target="_blank"><i
+                            class="fab fa-facebook-square"></i><span>Facebook</span></a></li>
+                <li class="footer--li"><a href="https://wa.me/message/DSVL6PRA25HXH1" target="_blank"><i
+                            class="fab fa-whatsapp"></i><span>Whatsapp</span></a></li>
+                <li class="footer--li"><a href="https://www.instagram.com/alisslulusbusinessking/" target="_blank"><i
+                            class="fab fa-instagram"></i><span>Instagram</span></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
+    </script>
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Local JavaScript -->
+    <script src="main.js"></script>
+</body>
+
+</html>
