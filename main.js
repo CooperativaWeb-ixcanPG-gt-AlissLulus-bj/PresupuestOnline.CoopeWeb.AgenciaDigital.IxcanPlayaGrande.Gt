@@ -150,7 +150,7 @@ $("#btn2").on("click", function () {
 // Convertir a pdf
 // Queda en A3 porque en A4 tengo problemas con el font-size
 document.addEventListener("DOMContentLoaded", () => {
-    const $boton = document.querySelector("#btn__pdf");
+    const Qboton = document.querySelector("#btn__pdf");
     $boton.addEventListener("click", () => {
         const $elementoParaConvertir = document.getElementById("presupuesto__pdf");
         html2pdf()
